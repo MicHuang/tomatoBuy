@@ -1,8 +1,18 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="logs">
-    <text>查看登录日志</text>
+
+  <view class="listContainer">
+    <form class="list" bindtap="bindOrderTap">
+      <text>xxx年/xx月/xx日 的订单</text>
+    </form>
+    <form class="list" bindtap="bindOrderTap">
+      <text>xxx年/xx月/xx日 的订单</text>
+    </form>
+    <form class="list" bindtap="bindOrderTap">
+      <text>xxx年/xx月/xx日 的订单</text>
+    </form>
   </view>
+
   <view class="usermotto">
     <text class="user-motto">番茄订单手册</text>
     <text class="user-motto">{{motto}}</text>

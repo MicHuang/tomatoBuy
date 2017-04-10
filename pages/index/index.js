@@ -7,9 +7,9 @@ Page({
     userInfo: {}
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindOrderTap: function(){
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../order/order'
     })
   },
   onLoad: function () {

@@ -1,0 +1,15 @@
+<view class="index">
+  <view class="body">
+    <!--list-->
+    <view class="list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="list-item">
+          <view id="{{item.id}}" class="item-content">
+            <view class="item-text"  bindtap="onTap">{{item.name}}</view>
+            <image class="item-img" src="../../img/Delete.png" bindtap="modelTap" data-index="{{index}}"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
