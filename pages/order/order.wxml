@@ -1,3 +1,3 @@
 <view>
-  <text>我是订单1</text>
+  <button bindtap="addOrder">添加</button>
 </view>

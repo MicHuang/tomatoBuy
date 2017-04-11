@@ -4,8 +4,8 @@ var app = getApp()
 Page({
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../index/index'
+    wx.redirectTo({
+      url: '../list/list'
     })
   },
   onLoad: function () {
@@ -15,7 +15,7 @@ Page({
     app.getUserInfo(function(userInfo){
       //更新数据
       that.setData({
-        userInfo:userInfo
+        userInfo: userInfo
       })
     })
   }

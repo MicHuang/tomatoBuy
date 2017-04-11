@@ -1,7 +1,6 @@
+
 Page({
   data: {
-    hidden: true,
-    index: 0,
     list: [
       {
         id: 20170409,
@@ -20,6 +19,17 @@ Page({
     wx.navigateTo({
       url: './'
     })
+  },
+  addOrder: function() {
+    var newOrder = [{
+      id: 20170312,
+      name: '新的订单'
+    }];
+
+    this.data.list = this.data.list.concat(newOrder);
+    this.setData({
+      list: this.data.list
+    });
   },
   deleteOrder: function(e){
     var dataSet = e.target.dataset;

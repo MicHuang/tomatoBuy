@@ -10,6 +10,7 @@
           </view>
         </view>
       </block>
+      <button bindtap="addOrder">添加</button>
     </view>
   </view>
 </view>
