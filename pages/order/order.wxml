@@ -1,3 +1,24 @@
-<view>
-  <button bindtap="addOrder">添加</button>
+<view class="container">
+    <view class="content">
+
+      <view class="page-section">
+        <view class="input-cells_title">订单名</view>
+        <view class="input-cells input-cells_after-title">
+          <view class="input-cell input-cell_input" id="order_name">
+            <input class="input"  maxlength="10" bindinput="bindName" auto-focus placeholder=""/>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="input-cells_title">备注</view>
+        <view class="input-cells input-cells_after-title">
+          <view class="input-cell input-cell_input" id="order_remark">
+            <input class="input"  maxlength="10" bindinput="bindRemark" placeholder=""/>
+          </view>
+        </view>
+      </view>
+
+      <button bindtap="addOrder" class="btn">添加</button>
+    </view>
 </view>

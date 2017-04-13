@@ -1,40 +1,56 @@
-
 Page({
   data: {
-    list: [
-      {
-        id: 20170409,
-        name: '日货订单',
-      }, {
-        id: 20170410,
-        name: '加拿大订单'
-      }, {
-        id: 20160101,
-        name: '很久之前的订单'
+    list: ''
+  },
+  //加载事件
+  onLoad: function() {
+    //从缓存中读取数据
+    var that = this
+    wx.getStorage({
+      key: 'list',
+      success: function(res) {
+        that.setData({
+          list: res.data
+        })
       }
-    ]
+    })
+    this.showStorage()
+  },
+  onShow: function() {
+    this.onLoad()
+  },
+  //Debug Tool 查看storage
+  showStorage: function() {
+    wx.getStorage({
+      key: 'list',
+      success: function(res) {
+        console.log(res.data)
+      }
+    })
   },
   //事件处理
-  onTap: function() {
+  onTap: function(order) {
+    var id = order.target.id
     wx.navigateTo({
       url: './'
     })
+    console.log(id)
+    console.log(this.data.list["id"])
   },
-  addOrder: function() {
-    var newOrder = [{
-      id: 20170312,
-      name: '新的订单'
-    }];
+  writeStorage: function(){
+    try {
+      wx.setStorageSync('list', this.data.list)
+    } catch (e) {
 
-    this.data.list = this.data.list.concat(newOrder);
-    this.setData({
-      list: this.data.list
-    });
+    }
   },
   deleteOrder: function(e){
     var dataSet = e.target.dataset;
     var Index = dataSet.index;
     this.data.list.splice(Index,1);
+    //同步缓存
+    this.writeStorage()
+    //重新渲染页面
     this.setData({
       list: this.data.list
     });

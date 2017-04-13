@@ -3,10 +3,20 @@
 var app = getApp()
 Page({
   //事件处理函数
+  data: {
+    list: []
+  },
   bindViewTap: function() {
-    wx.redirectTo({
+    wx.switchTab({
       url: '../list/list'
     })
+  },
+  writeStorage: function() {
+    try {
+      wx.setStorageSync('list', this.data.list)
+    } catch (e) {
+
+    }
   },
   onLoad: function () {
     console.log('onLoad')
@@ -18,5 +28,7 @@ Page({
         userInfo: userInfo
       })
     })
+    //把数据写进缓存
+    //that.writeStorage()
   }
 })

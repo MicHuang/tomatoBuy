@@ -3,14 +3,16 @@
     <!--list-->
     <view class="list">
       <block wx:for-items="{{list}}" wx:key="{{item.id}}">
-        <view class="list-item">
-          <view id="{{item.id}}" class="item-content">
-            <view class="item-text"  bindtap="onTap">{{item.name}}</view>
-            <image class="item-img" src="../../img/Delete.png" bindtap="modelTap" data-index="{{index}}"></image>
+
+          <view class="list-item">
+            <view class="item-content">
+              <view id="{{item.id}}" class="item-text"  bindtap="onTap">{{item.name}}</view>
+              <image class="item-img" src="../../img/trash.png" bindtap="modelTap" data-index="{{index}}"></image>
+            </view>
+            <view class="item-date">{{item.date}}</view>
           </view>
-        </view>
+
       </block>
-      <button bindtap="addOrder">添加</button>
     </view>
   </view>
 </view>
