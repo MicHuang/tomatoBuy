@@ -41,7 +41,13 @@ Page({
     //var key = Date.now()
     //var newOrder = new order(Date.now(), this.data.name, this.data.remark, util.formatTime(new Date));
     //this.data.list[key] = newOrder
-    this.data.list[this.data.key] = this.data.newOrder
+    if (this.data.newOrder.name == "") {
+      wx.showToast({
+        title: "订单名不能为空"
+      });
+      return false;
+    }
+    this.data.list[this.data.key] = this.data.newOrder;
     //同步缓存
     this.writeStorage()
     this.setData({

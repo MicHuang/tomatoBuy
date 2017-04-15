@@ -13,7 +13,7 @@
       <view class="page-section">
         <view class="input-cells_title">备注</view>
         <view class="input-cells input-cells_after-title">
-          <view class="input-cell input-cell_input" id="order_remark">
+          <view class="textarea-wrp" id="order_remark">
             <textarea class="input" bindinput="bindRemark" auto-height value="{{placeholder}}"/>
           </view>
         </view>
